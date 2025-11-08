@@ -68,6 +68,7 @@ FIREBASE_DATABASE_URL=https://your-project.firebaseio.com
 Once your database is ready, create the following collections in Firestore:
 
 ### 1. Users Collection
+
 ```javascript
 {
   userId: "string",
@@ -77,16 +78,16 @@ Once your database is ready, create the following collections in Firestore:
   profileComplete: boolean,
   createdAt: timestamp,
   updatedAt: timestamp,
-  
+
   // Role-specific fields
   // For students:
   gpa: number,
   transcript: "storage-path",
-  
+
   // For institutions:
   institution_name: "string",
   institution_address: "string",
-  
+
   // For companies:
   company_name: "string",
   company_address: "string"
@@ -94,6 +95,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 2. Institutions Collection
+
 ```javascript
 {
   institutionId: "string",
@@ -110,6 +112,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 3. Faculties Collection (nested under institutions)
+
 ```javascript
 {
   facultyId: "string",
@@ -122,6 +125,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 4. Courses Collection (nested under faculties)
+
 ```javascript
 {
   courseId: "string",
@@ -142,6 +146,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 5. Applications Collection
+
 ```javascript
 {
   applicationId: "string",
@@ -156,6 +161,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 6. Companies Collection
+
 ```javascript
 {
   companyId: "string",
@@ -173,6 +179,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 7. Jobs Collection
+
 ```javascript
 {
   jobId: "string",
@@ -197,6 +204,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 8. Job Applications Collection
+
 ```javascript
 {
   jobApplicationId: "string",
@@ -210,6 +218,7 @@ Once your database is ready, create the following collections in Firestore:
 ```
 
 ### 9. Notifications Collection
+
 ```javascript
 {
   notificationId: "string",
@@ -241,19 +250,19 @@ service cloud.firestore {
     // Public read, authenticated write for institutions
     match /institutions/{institutionId} {
       allow read: if true;
-      allow write: if request.auth != null && 
+      allow write: if request.auth != null &&
                       get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'institution';
-      
+
       // Nested faculties
       match /faculties/{facultyId} {
         allow read: if true;
-        allow write: if request.auth != null && 
+        allow write: if request.auth != null &&
                         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'institution';
-        
+
         // Nested courses
         match /courses/{courseId} {
           allow read: if true;
-          allow write: if request.auth != null && 
+          allow write: if request.auth != null &&
                           get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'institution';
         }
       }
@@ -269,13 +278,13 @@ service cloud.firestore {
     // Public read, authenticated write for companies
     match /companies/{companyId} {
       allow read: if true;
-      allow write: if request.auth != null && 
+      allow write: if request.auth != null &&
                       get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'company';
-      
+
       // Nested jobs
       match /jobs/{jobId} {
         allow read: if true;
-        allow write: if request.auth != null && 
+        allow write: if request.auth != null &&
                         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'company';
       }
     }
@@ -295,7 +304,7 @@ service cloud.firestore {
 
     // Admin-only settings
     match /admin/{document=**} {
-      allow read, write: if request.auth != null && 
+      allow read, write: if request.auth != null &&
                             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
   }
@@ -343,16 +352,19 @@ firebase deploy
 ## Troubleshooting
 
 ### "Service account key error"
+
 - Ensure `.env` file is not in `.gitignore` exceptions
 - Verify all environment variables are set correctly
 - Check that the `FIREBASE_PRIVATE_KEY` includes newline characters: `\n`
 
 ### "Firestore permission denied"
+
 - Check security rules in Firebase console
 - Ensure user is authenticated
 - Verify user role is set in Firestore
 
 ### Build fails
+
 - Clear node_modules: `rm -rf node_modules && pnpm install`
 - Clear build cache: `rm -rf dist`
 - Restart dev server: `pnpm dev`

@@ -60,7 +60,9 @@ export default function RegisterPage() {
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
             <h1 className="text-3xl font-bold mb-2 text-slate-900">Join Us</h1>
             <p className="text-slate-600 mb-8">
-              {step === 1 ? "Choose your role to get started" : "Create your account"}
+              {step === 1
+                ? "Choose your role to get started"
+                : "Create your account"}
             </p>
 
             {/* Progress Indicator */}
@@ -93,12 +95,14 @@ export default function RegisterPage() {
                       {
                         value: "student",
                         label: "Student",
-                        description: "Looking for education and career opportunities",
+                        description:
+                          "Looking for education and career opportunities",
                       },
                       {
                         value: "institution",
                         label: "Institution",
-                        description: "Educational institution managing programs",
+                        description:
+                          "Educational institution managing programs",
                       },
                       {
                         value: "company",
@@ -129,8 +133,12 @@ export default function RegisterPage() {
                             )}
                           </div>
                           <div>
-                            <p className="font-semibold text-slate-900">{type.label}</p>
-                            <p className="text-sm text-slate-600">{type.description}</p>
+                            <p className="font-semibold text-slate-900">
+                              {type.label}
+                            </p>
+                            <p className="text-sm text-slate-600">
+                              {type.description}
+                            </p>
                           </div>
                         </div>
                       </button>
@@ -242,14 +250,21 @@ export default function RegisterPage() {
                   disabled={isLoading}
                   className={`${step === 2 ? "flex-1" : "w-full"} py-2 bg-gradient-to-r from-primary to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition disabled:opacity-50`}
                 >
-                  {isLoading ? "Creating account..." : step === 1 ? "Continue" : "Create Account"}
+                  {isLoading
+                    ? "Creating account..."
+                    : step === 1
+                      ? "Continue"
+                      : "Create Account"}
                 </button>
               </div>
             </form>
 
             <p className="text-center text-slate-600 mt-6">
               Already have an account?{" "}
-              <Link to="/login" className="text-primary font-semibold hover:underline">
+              <Link
+                to="/login"
+                className="text-primary font-semibold hover:underline"
+              >
                 Sign in
               </Link>
             </p>

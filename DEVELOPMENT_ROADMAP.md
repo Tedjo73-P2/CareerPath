@@ -18,6 +18,7 @@ This document outlines the features and modules to implement for the Career Guid
 ## Phase 1: Core Authentication & User Management
 
 ### Tasks:
+
 1. **Implement Firebase Authentication**
    - Email/password authentication
    - Email verification flow
@@ -37,6 +38,7 @@ This document outlines the features and modules to implement for the Career Guid
    - Handle logout functionality
 
 **Files to create:**
+
 ```
 client/
 ├── contexts/
@@ -55,6 +57,7 @@ server/
 ## Phase 2: Student Module
 
 ### Features:
+
 1. **Student Dashboard**
    - View registered institutions
    - Track application status
@@ -81,6 +84,7 @@ server/
    - Upload resume and cover letter
 
 **Files to create:**
+
 ```
 client/pages/
 ├── student/
@@ -97,6 +101,7 @@ server/routes/
 ## Phase 3: Institution Module
 
 ### Features:
+
 1. **Institution Dashboard**
    - Manage faculties
    - Manage courses
@@ -121,6 +126,7 @@ server/routes/
    - Generate reports
 
 **Files to create:**
+
 ```
 client/pages/
 ├── institution/
@@ -138,6 +144,7 @@ server/routes/
 ## Phase 4: Company Module
 
 ### Features:
+
 1. **Company Dashboard**
    - Post job opportunities
    - View applications
@@ -163,6 +170,7 @@ server/routes/
    - Manage company details
 
 **Files to create:**
+
 ```
 client/pages/
 ├── company/
@@ -179,6 +187,7 @@ server/routes/
 ## Phase 5: Admin Module
 
 ### Features:
+
 1. **Admin Dashboard**
    - System overview
    - User statistics
@@ -215,6 +224,7 @@ server/routes/
    - Configure payment settings (if applicable)
 
 **Files to create:**
+
 ```
 client/pages/
 ├── admin/
@@ -231,6 +241,7 @@ server/routes/
 ## Phase 6: Notifications & Communication
 
 ### Features:
+
 1. **Email Notifications**
    - Account verification emails
    - Application status updates
@@ -250,6 +261,7 @@ server/routes/
    - Bulk notification sending
 
 **Files to create:**
+
 ```
 server/
 ├── utils/
@@ -264,6 +276,7 @@ client/components/
 ## Phase 7: File Management
 
 ### Features:
+
 1. **File Upload**
    - Transcript uploads
    - Resume uploads
@@ -277,6 +290,7 @@ client/components/
    - Virus scanning (optional)
 
 **Files to create:**
+
 ```
 server/utils/
 └── storage.js
@@ -287,6 +301,7 @@ client/components/
 ## Phase 8: Search & Filtering
 
 ### Features:
+
 1. **Institution Search**
    - Search by name
    - Filter by location
@@ -307,6 +322,7 @@ client/components/
    - Filter by qualifications
 
 **Implementation:**
+
 - Use Firestore query capabilities
 - Create search indexes in Firestore
 - Implement client-side filtering for UI
@@ -314,6 +330,7 @@ client/components/
 ## Phase 9: Analytics & Reporting
 
 ### Features:
+
 1. **User Analytics**
    - Total users by role
    - Registration trends
@@ -330,6 +347,7 @@ client/components/
    - Popular positions
 
 **Files to create:**
+
 ```
 client/pages/
 └── admin/
@@ -341,6 +359,7 @@ server/utils/
 ## Phase 10: Advanced Features
 
 ### Optional Enhancements:
+
 1. **Messaging System**
    - Direct messaging between users
    - Real-time chat
@@ -374,6 +393,7 @@ server/utils/
 ## Implementation Guidelines
 
 ### Code Organization:
+
 ```
 client/
 ├── pages/          # Page components (routes)
@@ -400,6 +420,7 @@ server/
 ```
 
 ### Best Practices:
+
 1. **Use Firebase SDKs** for authentication and database
 2. **Implement Error Handling** gracefully
 3. **Add Loading States** for async operations
@@ -412,6 +433,7 @@ server/
 10. **Code Review** before merging to main
 
 ### Security Considerations:
+
 1. Never commit `.env` file with secrets
 2. Validate all user input
 3. Use Firebase Security Rules

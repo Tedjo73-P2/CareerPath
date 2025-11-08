@@ -42,7 +42,9 @@ export default function LoginPage() {
       <div className="flex-1 section-padding">
         <div className="container-custom max-w-md mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
-            <h1 className="text-3xl font-bold mb-2 text-slate-900">Welcome Back</h1>
+            <h1 className="text-3xl font-bold mb-2 text-slate-900">
+              Welcome Back
+            </h1>
             <p className="text-slate-600 mb-8">Sign in to your account</p>
 
             {/* User Type Selection */}
@@ -131,7 +133,10 @@ export default function LoginPage() {
 
             <p className="text-center text-slate-600 mt-6">
               Don't have an account?{" "}
-              <Link to="/register" className="text-primary font-semibold hover:underline">
+              <Link
+                to="/register"
+                className="text-primary font-semibold hover:underline"
+              >
                 Create one
               </Link>
             </p>

@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { ArrowRight, Users, Briefcase, GraduationCap, Zap, Shield, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Briefcase,
+  GraduationCap,
+  Zap,
+  Shield,
+  TrendingUp,
+} from "lucide-react";
 
 export default function Index() {
   return (
@@ -21,7 +29,9 @@ export default function Index() {
               Your Path to Success Starts Here
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Discover top institutions, pursue your dreams, and land your perfect job. A comprehensive platform connecting students, educators, and employers across Lesotho.
+              Discover top institutions, pursue your dreams, and land your
+              perfect job. A comprehensive platform connecting students,
+              educators, and employers across Lesotho.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -49,7 +59,8 @@ export default function Index() {
               Everything You Need
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              A unified platform designed for students, institutions, and employers to work together seamlessly.
+              A unified platform designed for students, institutions, and
+              employers to work together seamlessly.
             </p>
           </div>
 
@@ -58,17 +69,20 @@ export default function Index() {
               {
                 icon: <GraduationCap className="w-8 h-8" />,
                 title: "For Students",
-                description: "Explore institutions, apply for courses, view admissions results, and discover career opportunities.",
+                description:
+                  "Explore institutions, apply for courses, view admissions results, and discover career opportunities.",
               },
               {
                 icon: <Users className="w-8 h-8" />,
                 title: "For Institutions",
-                description: "Manage programs, review applications, publish admissions, and connect with talented students.",
+                description:
+                  "Manage programs, review applications, publish admissions, and connect with talented students.",
               },
               {
                 icon: <Briefcase className="w-8 h-8" />,
                 title: "For Companies",
-                description: "Post jobs, discover qualified graduates, and build your dream team with top talent.",
+                description:
+                  "Post jobs, discover qualified graduates, and build your dream team with top talent.",
               },
             ].map((feature, idx) => (
               <div
@@ -98,9 +112,18 @@ export default function Index() {
               </h2>
               <ul className="space-y-4">
                 {[
-                  { icon: <Shield className="w-6 h-6" />, text: "Secure authentication with email verification" },
-                  { icon: <TrendingUp className="w-6 h-6" />, text: "Smart matching between students and opportunities" },
-                  { icon: <Zap className="w-6 h-6" />, text: "Real-time notifications and updates" },
+                  {
+                    icon: <Shield className="w-6 h-6" />,
+                    text: "Secure authentication with email verification",
+                  },
+                  {
+                    icon: <TrendingUp className="w-6 h-6" />,
+                    text: "Smart matching between students and opportunities",
+                  },
+                  {
+                    icon: <Zap className="w-6 h-6" />,
+                    text: "Real-time notifications and updates",
+                  },
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="text-primary mt-1">{item.icon}</div>
@@ -125,7 +148,8 @@ export default function Index() {
             Ready to Transform Your Future?
           </h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of students, institutions, and employers already using our platform.
+            Join thousands of students, institutions, and employers already
+            using our platform.
           </p>
           <Link
             to="/register"

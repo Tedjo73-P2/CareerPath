@@ -15,13 +15,22 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-slate-600 hover:text-primary transition">
+          <a
+            href="#features"
+            className="text-slate-600 hover:text-primary transition"
+          >
             Features
           </a>
-          <a href="#about" className="text-slate-600 hover:text-primary transition">
+          <a
+            href="#about"
+            className="text-slate-600 hover:text-primary transition"
+          >
             About
           </a>
-          <a href="#contact" className="text-slate-600 hover:text-primary transition">
+          <a
+            href="#contact"
+            className="text-slate-600 hover:text-primary transition"
+          >
             Contact
           </a>
         </nav>

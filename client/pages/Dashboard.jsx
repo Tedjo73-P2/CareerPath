@@ -19,7 +19,11 @@ export default function Dashboard() {
         <div className="container-custom">
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             {[
-              { icon: <LayoutDashboard />, label: "Dashboard", count: "Overview" },
+              {
+                icon: <LayoutDashboard />,
+                label: "Dashboard",
+                count: "Overview",
+              },
               { icon: <FileText />, label: "Applications", count: "Manage" },
               { icon: <Briefcase />, label: "Opportunities", count: "Browse" },
               { icon: <Users />, label: "Network", count: "Connect" },
@@ -40,7 +44,8 @@ export default function Dashboard() {
               Welcome to Your Dashboard
             </h2>
             <p className="text-slate-600 mb-6">
-              This is a placeholder dashboard. Additional features will be implemented as per your requirements.
+              This is a placeholder dashboard. Additional features will be
+              implemented as per your requirements.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

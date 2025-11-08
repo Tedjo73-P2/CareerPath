@@ -5,6 +5,7 @@ A comprehensive web application platform that assists high school students in di
 ## Features
 
 ### For Students
+
 - Browse and discover higher learning institutions
 - View available courses and faculties
 - Apply for courses (max 2 per institution)
@@ -14,6 +15,7 @@ A comprehensive web application platform that assists high school students in di
 - Receive job notifications based on qualifications
 
 ### For Institutions
+
 - Register and manage institution profile
 - Add and manage faculties and courses
 - View and process student applications
@@ -22,6 +24,7 @@ A comprehensive web application platform that assists high school students in di
 - Update course information
 
 ### For Companies
+
 - Register and manage company profile
 - Post job opportunities with requirements
 - View automatically filtered qualified applicants
@@ -29,6 +32,7 @@ A comprehensive web application platform that assists high school students in di
 - Manage recruitment pipeline
 
 ### Admin Features
+
 - Manage institutions, faculties, and courses
 - Monitor user registrations
 - Manage company accounts
@@ -83,6 +87,7 @@ career-guidance-platform/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 16+ and pnpm
 - Firebase project with Firestore enabled
 - GitHub repository
@@ -90,20 +95,24 @@ career-guidance-platform/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-github-repo-url>
    cd career-guidance-platform
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env
    ```
+
    Update `.env` with your Firebase credentials:
    - Go to [Firebase Console](https://console.firebase.google.com/)
    - Create a new project or select existing one
@@ -153,6 +162,7 @@ pnpm format.fix    # Format code
 ## Deployment
 
 ### On Netlify
+
 1. Connect GitHub repository
 2. Set build command: `pnpm build`
 3. Set publish directory: `dist/spa`
@@ -160,12 +170,14 @@ pnpm format.fix    # Format code
 5. Deploy
 
 ### On Firebase Hosting
+
 1. Install Firebase CLI: `npm install -g firebase-tools`
 2. Run: `firebase init hosting`
 3. Configure for your project
 4. Deploy: `firebase deploy --only hosting`
 
 ### On Vercel
+
 1. Connect GitHub repository
 2. Set root directory: `.`
 3. Add environment variables
@@ -195,6 +207,7 @@ MIT License - see LICENSE file for details
 ## Support
 
 For issues and questions:
+
 - Open an issue on GitHub
 - Contact: support@careerpath.ls
 
