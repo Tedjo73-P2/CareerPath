@@ -2,7 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Search, MapPin, DollarSign, Briefcase, ChevronRight } from "lucide-react";
+import {
+  Search,
+  MapPin,
+  DollarSign,
+  Briefcase,
+  ChevronRight,
+} from "lucide-react";
 
 export default function StudentJobs() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +22,8 @@ export default function StudentJobs() {
       salary: "M20,000 - M25,000",
       location: "Maseru",
       category: "IT",
-      description: "We're looking for a junior developer to join our growing team.",
+      description:
+        "We're looking for a junior developer to join our growing team.",
       requirements: { minGPA: 3.5, experience: 0 },
       featured: true,
     },
@@ -38,7 +45,8 @@ export default function StudentJobs() {
       salary: "M18,000 - M23,000",
       location: "Maseru",
       category: "Business",
-      description: "Join our team to analyze business requirements and solutions.",
+      description:
+        "Join our team to analyze business requirements and solutions.",
       requirements: { minGPA: 3.2, experience: 0 },
       featured: true,
     },
@@ -49,7 +57,8 @@ export default function StudentJobs() {
       salary: "M15,000 - M20,000",
       location: "Maseru",
       category: "Marketing",
-      description: "Create and execute marketing strategies for diverse clients.",
+      description:
+        "Create and execute marketing strategies for diverse clients.",
       requirements: { minGPA: 3.0, experience: 1 },
       featured: false,
     },
@@ -60,16 +69,19 @@ export default function StudentJobs() {
       salary: "M16,000 - M21,000",
       location: "Leribe",
       category: "HR",
-      description: "Support human resources operations and employee development.",
+      description:
+        "Support human resources operations and employee development.",
       requirements: { minGPA: 3.0, experience: 0 },
       featured: false,
     },
   ];
 
   const filteredJobs = jobs.filter((job) => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         job.company.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || job.category === selectedCategory;
+    const matchesSearch =
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.company.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || job.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -83,8 +95,12 @@ export default function StudentJobs() {
         <div className="container-custom">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-4xl font-bold text-slate-900 mb-2">Job Opportunities</h1>
-            <p className="text-lg text-slate-600">Find your next career opportunity with leading companies</p>
+            <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              Job Opportunities
+            </h1>
+            <p className="text-lg text-slate-600">
+              Find your next career opportunity with leading companies
+            </p>
           </div>
 
           {/* Search and Filter */}
@@ -119,41 +135,51 @@ export default function StudentJobs() {
           {/* Featured Jobs */}
           {selectedCategory === "all" && (
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Featured Positions</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                Featured Positions
+              </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {jobs.filter(j => j.featured).map((job) => (
-                  <Link
-                    key={job.id}
-                    to={`/student/job/${job.id}`}
-                    className="bg-gradient-to-br from-primary/5 to-cyan-500/5 rounded-xl border border-primary/20 p-6 hover:shadow-lg transition card-hover"
-                  >
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-slate-900 mb-1">{job.title}</h3>
-                      <p className="text-slate-600">{job.company}</p>
-                    </div>
-                    <p className="text-slate-600 text-sm mb-4">{job.description}</p>
-                    <div className="space-y-2 text-sm text-slate-600 mb-4">
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="w-4 h-4" />
-                        {job.salary}
+                {jobs
+                  .filter((j) => j.featured)
+                  .map((job) => (
+                    <Link
+                      key={job.id}
+                      to={`/student/job/${job.id}`}
+                      className="bg-gradient-to-br from-primary/5 to-cyan-500/5 rounded-xl border border-primary/20 p-6 hover:shadow-lg transition card-hover"
+                    >
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-slate-900 mb-1">
+                          {job.title}
+                        </h3>
+                        <p className="text-slate-600">{job.company}</p>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        {job.location}
+                      <p className="text-slate-600 text-sm mb-4">
+                        {job.description}
+                      </p>
+                      <div className="space-y-2 text-sm text-slate-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <DollarSign className="w-4 h-4" />
+                          {job.salary}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4" />
+                          {job.location}
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center text-primary font-semibold">
-                      View Details <ChevronRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </Link>
-                ))}
+                      <div className="flex items-center text-primary font-semibold">
+                        View Details <ChevronRight className="w-4 h-4 ml-2" />
+                      </div>
+                    </Link>
+                  ))}
               </div>
             </div>
           )}
 
           {/* All Jobs */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Available Positions</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              Available Positions
+            </h2>
             {filteredJobs.length > 0 ? (
               <div className="space-y-4">
                 {filteredJobs.map((job) => (
@@ -164,14 +190,18 @@ export default function StudentJobs() {
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-1">{job.title}</h3>
+                        <h3 className="text-xl font-bold text-slate-900 mb-1">
+                          {job.title}
+                        </h3>
                         <p className="text-slate-600">{job.company}</p>
                       </div>
                       <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
                         {job.category}
                       </span>
                     </div>
-                    <p className="text-slate-600 text-sm mb-4">{job.description}</p>
+                    <p className="text-slate-600 text-sm mb-4">
+                      {job.description}
+                    </p>
                     <div className="grid md:grid-cols-3 gap-4 mb-4 pb-4 border-b border-slate-200">
                       <div className="flex items-center gap-2 text-slate-600">
                         <DollarSign className="w-4 h-4" />
@@ -194,7 +224,9 @@ export default function StudentJobs() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-slate-600 text-lg">No jobs found matching your criteria</p>
+                <p className="text-slate-600 text-lg">
+                  No jobs found matching your criteria
+                </p>
               </div>
             )}
           </div>

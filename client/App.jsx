@@ -43,7 +43,10 @@ const RootApp = () => (
         <Route path="/student/jobs" element={<StudentJobs />} />
 
         {/* Institution Routes */}
-        <Route path="/institution/dashboard" element={<InstitutionDashboard />} />
+        <Route
+          path="/institution/dashboard"
+          element={<InstitutionDashboard />}
+        />
         <Route path="/institution/manage-courses" element={<ManageCourses />} />
 
         {/* Company Routes */}

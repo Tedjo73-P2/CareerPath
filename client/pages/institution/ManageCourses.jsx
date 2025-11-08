@@ -50,14 +50,23 @@ export default function ManageCourses() {
   const handleAddCourse = (e) => {
     e.preventDefault();
     if (newCourse.name && newCourse.code) {
-      setCourses([...courses, { ...newCourse, id: Date.now(), applications: 0 }]);
-      setNewCourse({ name: "", code: "", faculty: "", credits: 120, capacity: 50 });
+      setCourses([
+        ...courses,
+        { ...newCourse, id: Date.now(), applications: 0 },
+      ]);
+      setNewCourse({
+        name: "",
+        code: "",
+        faculty: "",
+        credits: 120,
+        capacity: 50,
+      });
       setShowModal(false);
     }
   };
 
   const deleteCourse = (id) => {
-    setCourses(courses.filter(c => c.id !== id));
+    setCourses(courses.filter((c) => c.id !== id));
   };
 
   return (
@@ -69,8 +78,12 @@ export default function ManageCourses() {
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">Manage Courses</h1>
-              <p className="text-lg text-slate-600">Create and manage your academic programs</p>
+              <h1 className="text-4xl font-bold text-slate-900 mb-2">
+                Manage Courses
+              </h1>
+              <p className="text-lg text-slate-600">
+                Create and manage your academic programs
+              </p>
             </div>
             <button
               onClick={() => setShowModal(true)}
@@ -84,10 +97,15 @@ export default function ManageCourses() {
           {/* Courses Grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {courses.map((course) => (
-              <div key={course.id} className="bg-white rounded-xl border border-slate-200 p-6">
+              <div
+                key={course.id}
+                className="bg-white rounded-xl border border-slate-200 p-6"
+              >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">{course.name}</h3>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      {course.name}
+                    </h3>
                     <p className="text-slate-600 text-sm">{course.code}</p>
                   </div>
                   <div className="flex gap-2">
@@ -103,23 +121,35 @@ export default function ManageCourses() {
                   </div>
                 </div>
 
-                <p className="text-slate-600 text-sm mb-4">{course.description}</p>
+                <p className="text-slate-600 text-sm mb-4">
+                  {course.description}
+                </p>
 
                 <div className="space-y-3 mb-4 pb-4 border-b border-slate-200">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-600">Faculty: {course.faculty}</span>
-                    <span className="font-semibold text-slate-900">{course.credits} Credits</span>
+                    <span className="text-slate-600">
+                      Faculty: {course.faculty}
+                    </span>
+                    <span className="font-semibold text-slate-900">
+                      {course.credits} Credits
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-slate-600" />
                     <span className="text-sm text-slate-600">
-                      {course.applications}/{course.capacity} capacity ({Math.round((course.applications / course.capacity) * 100)}%)
+                      {course.applications}/{course.capacity} capacity (
+                      {Math.round(
+                        (course.applications / course.capacity) * 100,
+                      )}
+                      %)
                     </span>
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-2">
                     <div
                       className="bg-gradient-to-r from-primary to-cyan-500 h-2 rounded-full"
-                      style={{ width: `${(course.applications / course.capacity) * 100}%` }}
+                      style={{
+                        width: `${(course.applications / course.capacity) * 100}%`,
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -138,56 +168,84 @@ export default function ManageCourses() {
           {showModal && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
               <div className="bg-white rounded-xl p-8 max-w-md w-full mx-4">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">Add New Course</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                  Add New Course
+                </h2>
                 <form onSubmit={handleAddCourse} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-900 mb-2">Course Name</label>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">
+                      Course Name
+                    </label>
                     <input
                       type="text"
                       value={newCourse.name}
-                      onChange={(e) => setNewCourse({...newCourse, name: e.target.value})}
+                      onChange={(e) =>
+                        setNewCourse({ ...newCourse, name: e.target.value })
+                      }
                       placeholder="e.g., Computer Science"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-900 mb-2">Course Code</label>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">
+                      Course Code
+                    </label>
                     <input
                       type="text"
                       value={newCourse.code}
-                      onChange={(e) => setNewCourse({...newCourse, code: e.target.value})}
+                      onChange={(e) =>
+                        setNewCourse({ ...newCourse, code: e.target.value })
+                      }
                       placeholder="e.g., CS101"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-900 mb-2">Faculty</label>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">
+                      Faculty
+                    </label>
                     <input
                       type="text"
                       value={newCourse.faculty}
-                      onChange={(e) => setNewCourse({...newCourse, faculty: e.target.value})}
+                      onChange={(e) =>
+                        setNewCourse({ ...newCourse, faculty: e.target.value })
+                      }
                       placeholder="e.g., Engineering & Technology"
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 mb-2">Credits</label>
+                      <label className="block text-sm font-medium text-slate-900 mb-2">
+                        Credits
+                      </label>
                       <input
                         type="number"
                         value={newCourse.credits}
-                        onChange={(e) => setNewCourse({...newCourse, credits: parseInt(e.target.value)})}
+                        onChange={(e) =>
+                          setNewCourse({
+                            ...newCourse,
+                            credits: parseInt(e.target.value),
+                          })
+                        }
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 mb-2">Capacity</label>
+                      <label className="block text-sm font-medium text-slate-900 mb-2">
+                        Capacity
+                      </label>
                       <input
                         type="number"
                         value={newCourse.capacity}
-                        onChange={(e) => setNewCourse({...newCourse, capacity: parseInt(e.target.value)})}
+                        onChange={(e) =>
+                          setNewCourse({
+                            ...newCourse,
+                            capacity: parseInt(e.target.value),
+                          })
+                        }
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                     </div>

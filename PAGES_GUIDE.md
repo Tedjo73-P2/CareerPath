@@ -6,17 +6,18 @@ All pages are now live and fully functional with mock data for testing!
 
 ### 🏠 Public Pages
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Landing Page | `/` | Beautiful hero section with features and CTAs |
-| Login | `/login` | Multi-role login form (Student/Institution/Company) |
-| Register | `/register` | Multi-step registration with role selection |
+| Page         | URL         | Description                                         |
+| ------------ | ----------- | --------------------------------------------------- |
+| Landing Page | `/`         | Beautiful hero section with features and CTAs       |
+| Login        | `/login`    | Multi-role login form (Student/Institution/Company) |
+| Register     | `/register` | Multi-step registration with role selection         |
 
 ---
 
 ## 👨‍🎓 Student Module
 
 ### Dashboard
+
 - **URL**: `/student/dashboard`
 - **Features**:
   - Welcome message with student stats (Applications, Admissions, GPA, Notifications)
@@ -26,6 +27,7 @@ All pages are now live and fully functional with mock data for testing!
   - Quick action buttons
 
 ### Browse Institutions
+
 - **URL**: `/student/institutions`
 - **Features**:
   - Search institutions by name
@@ -35,6 +37,7 @@ All pages are now live and fully functional with mock data for testing!
   - Location and rating information
 
 ### View Applications
+
 - **URL**: `/student/applications`
 - **Features**:
   - View all submitted applications
@@ -46,6 +49,7 @@ All pages are now live and fully functional with mock data for testing!
   - Application tips section
 
 ### Job Opportunities
+
 - **URL**: `/student/jobs`
 - **Features**:
   - Browse job postings
@@ -61,6 +65,7 @@ All pages are now live and fully functional with mock data for testing!
 ## 🏫 Institution Module
 
 ### Dashboard
+
 - **URL**: `/institution/dashboard`
 - **Features**:
   - Key metrics (Total Students, Courses, Pending Apps, Faculties)
@@ -71,6 +76,7 @@ All pages are now live and fully functional with mock data for testing!
   - Application pipeline visualization
 
 ### Manage Courses
+
 - **URL**: `/institution/manage-courses`
 - **Features**:
   - List all courses with details
@@ -86,6 +92,7 @@ All pages are now live and fully functional with mock data for testing!
 ## 🏢 Company Module
 
 ### Dashboard
+
 - **URL**: `/company/dashboard`
 - **Features**:
   - Active jobs, applications, and views stats
@@ -100,6 +107,7 @@ All pages are now live and fully functional with mock data for testing!
 ## 👨‍💼 Admin Module
 
 ### Dashboard
+
 - **URL**: `/admin/dashboard`
 - **Features**:
   - System overview stats (Total Users, Students, Institutions, Companies)
@@ -114,17 +122,20 @@ All pages are now live and fully functional with mock data for testing!
 ## 📊 Interactive Features
 
 ### Charts & Visualizations
+
 - **Line Charts**: Application trends, user growth
 - **Bar Charts**: Application statistics, monthly submissions
 - **Progress Bars**: Course capacity, enrollment rates
 - **Status Indicators**: Color-coded badges for application/job status
 
 ### Forms & Modals
+
 - **Add Course Modal**: Institution can add new courses
 - **Search & Filter**: Search across all pages with real-time filtering
 - **Status Badges**: Visual indicators for application/job status
 
 ### Data & Mock Values
+
 - **Students**: 10,200+ registered
 - **Institutions**: 15 active institutions
 - **Companies**: 28 registered companies
@@ -136,12 +147,14 @@ All pages are now live and fully functional with mock data for testing!
 ## 🎨 Design Features
 
 ### Responsive Design
+
 - ✅ Mobile-first approach
 - ✅ Tablet-friendly layouts
 - ✅ Desktop-optimized views
 - ✅ Flexible grid systems
 
 ### Styling
+
 - Modern color scheme (Blue primary, Cyan accents)
 - Consistent spacing and padding
 - Smooth animations and transitions
@@ -149,6 +162,7 @@ All pages are now live and fully functional with mock data for testing!
 - Professional typography
 
 ### Interactive Elements
+
 - Hover effects on buttons and cards
 - Active state indicators
 - Modal dialogs with forms
@@ -183,6 +197,7 @@ Landing Page (/)
 ## 📱 Mobile Views
 
 All pages are fully responsive:
+
 - **Mobile (375px)**: Touch-friendly buttons, stacked layouts
 - **Tablet (768px)**: Two-column grids, optimized charts
 - **Desktop (1400px)**: Full-featured layouts with sidebars
@@ -194,22 +209,27 @@ All pages are fully responsive:
 Click to navigate to each page:
 
 ### Students
+
 - http://localhost:8080/student/dashboard
 - http://localhost:8080/student/institutions
 - http://localhost:8080/student/applications
 - http://localhost:8080/student/jobs
 
 ### Institutions
+
 - http://localhost:8080/institution/dashboard
 - http://localhost:8080/institution/manage-courses
 
 ### Companies
+
 - http://localhost:8080/company/dashboard
 
 ### Admin
+
 - http://localhost:8080/admin/dashboard
 
 ### Public
+
 - http://localhost:8080/
 - http://localhost:8080/login
 - http://localhost:8080/register
@@ -256,6 +276,7 @@ client/pages/
 ## ✨ Features Ready for Enhancement
 
 Each page has placeholders for:
+
 - Real authentication checks
 - Firebase data integration
 - Dynamic content loading

@@ -18,7 +18,8 @@ export default function BrowseInstitutions() {
       courses: 45,
       rating: 4.8,
       featured: true,
-      description: "Leading university offering diverse programs in technology, business, and sciences.",
+      description:
+        "Leading university offering diverse programs in technology, business, and sciences.",
       logo: "🎓",
     },
     {
@@ -30,7 +31,8 @@ export default function BrowseInstitutions() {
       courses: 18,
       rating: 4.5,
       featured: true,
-      description: "Premier institution for teacher education and professional development.",
+      description:
+        "Premier institution for teacher education and professional development.",
       logo: "📚",
     },
     {
@@ -42,7 +44,8 @@ export default function BrowseInstitutions() {
       courses: 32,
       rating: 4.6,
       featured: true,
-      description: "Specialized in creative and technological education programs.",
+      description:
+        "Specialized in creative and technological education programs.",
       logo: "🎨",
     },
     {
@@ -54,7 +57,8 @@ export default function BrowseInstitutions() {
       courses: 12,
       rating: 4.3,
       featured: false,
-      description: "Business and management education for corporate professionals.",
+      description:
+        "Business and management education for corporate professionals.",
       logo: "💼",
     },
     {
@@ -66,13 +70,16 @@ export default function BrowseInstitutions() {
       courses: 15,
       rating: 4.2,
       featured: false,
-      description: "Technical and vocational training in engineering and trades.",
+      description:
+        "Technical and vocational training in engineering and trades.",
       logo: "⚙️",
     },
   ];
 
   const filteredInstitutions = institutions.filter((inst) => {
-    const matchesSearch = inst.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = inst.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     const matchesType = selectedType === "all" || inst.type === selectedType;
     return matchesSearch && matchesType;
   });
@@ -87,8 +94,12 @@ export default function BrowseInstitutions() {
         <div className="container-custom">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-4xl font-bold text-slate-900 mb-2">Discover Institutions</h1>
-            <p className="text-lg text-slate-600">Find the perfect university or college for your future</p>
+            <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              Discover Institutions
+            </h1>
+            <p className="text-lg text-slate-600">
+              Find the perfect university or college for your future
+            </p>
           </div>
 
           {/* Search and Filter */}
@@ -127,7 +138,9 @@ export default function BrowseInstitutions() {
           {/* Featured Institutions */}
           {selectedType === "all" && (
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Featured Institutions</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                Featured Institutions
+              </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {featuredInsts.map((inst) => (
                   <Link
@@ -136,8 +149,12 @@ export default function BrowseInstitutions() {
                     className="bg-gradient-to-br from-primary/5 to-cyan-500/5 rounded-xl border border-primary/20 p-6 hover:shadow-lg transition card-hover"
                   >
                     <div className="text-5xl mb-4">{inst.logo}</div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{inst.name}</h3>
-                    <p className="text-slate-600 text-sm mb-4">{inst.description}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                      {inst.name}
+                    </h3>
+                    <p className="text-slate-600 text-sm mb-4">
+                      {inst.description}
+                    </p>
                     <div className="flex gap-4 text-sm text-slate-600 mb-4">
                       <div className="flex items-center gap-1">
                         <Users className="w-4 h-4" />
@@ -160,7 +177,9 @@ export default function BrowseInstitutions() {
           {/* All Institutions */}
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              {selectedType === "all" ? "All Institutions" : `${selectedType.charAt(0).toUpperCase() + selectedType.slice(1)}s`}
+              {selectedType === "all"
+                ? "All Institutions"
+                : `${selectedType.charAt(0).toUpperCase() + selectedType.slice(1)}s`}
             </h2>
             {filteredInstitutions.length > 0 ? (
               <div className="grid md:grid-cols-2 gap-6">
@@ -176,8 +195,12 @@ export default function BrowseInstitutions() {
                         {inst.type.charAt(0).toUpperCase() + inst.type.slice(1)}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{inst.name}</h3>
-                    <p className="text-slate-600 text-sm mb-4">{inst.description}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                      {inst.name}
+                    </h3>
+                    <p className="text-slate-600 text-sm mb-4">
+                      {inst.description}
+                    </p>
                     <div className="flex items-center gap-1 text-slate-600 text-sm mb-4">
                       <MapPin className="w-4 h-4" />
                       {inst.location}
@@ -203,7 +226,9 @@ export default function BrowseInstitutions() {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-slate-600 text-lg">No institutions found matching your criteria</p>
+                <p className="text-slate-600 text-lg">
+                  No institutions found matching your criteria
+                </p>
               </div>
             )}
           </div>
