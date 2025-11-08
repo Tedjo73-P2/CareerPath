@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { fileURLToPath } from "url";
-import { createServer } from "./server/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -32,8 +31,11 @@ function expressPlugin() {
     name: "express-plugin",
     apply: "serve",
     configureServer(server) {
-      const app = createServer();
-      server.middlewares.use(app);
+      // Dynamically import createServer to avoid issues
+      import("./server/index.js").then(({ createServer }) => {
+        const app = createServer();
+        server.middlewares.use(app);
+      });
     },
   };
 }
